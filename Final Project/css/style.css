@@ -1,0 +1,187 @@
+/*
+
+                            CSS + Grid
+
+*/
+
+body{
+margin: 0; /** have zero for margin **/
+}
+
+h1,h2,h3,h4,h5,h6{
+font-size: 15px;
+}
+h1{
+    font-family: "Charm", sans-serif;
+}
+h2,h3,h4,h5,h6{
+    font-family: "PT Serif Caption", sans-serif;
+}
+
+p,a,li{
+    font-family: "Red Hat Display", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    color: #0e0e0e;
+}
+
+
+body{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "title title title title"
+        "main main main aside"
+        "footer footer footer footer";
+}
+header {
+    grid-area: header;
+}
+header nav menu li a:hover{
+    border: 3px solid transparent;
+}
+
+main, aside{
+    background-color: #f8efe4;
+}
+
+footer{
+    grid-area: footer;
+}
+footer div p:hover{
+    color: #112368;
+    border: 5px solid transparent;
+}
+
+
+/* Mobile Styling (applies to global footer)*/
+@media screen and (max-width: 1024px) {
+    #Belville-global-footer {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 33% 33% 33%;
+        padding: 10px;
+    }
+
+    #Belville-footer-logo-con {
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    #AboutUsSection,
+    #SupportSection {
+        display:grid;
+        order: 2;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    #copyright {
+        display: grid;
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #Belville-global-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    #Belville-footer-logo-con {
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    #AboutUsSection,
+    #SupportSection {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    #copyright {
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 10px;
+    }
+}
+
+
+
+/*
+
+Mobile Styling (for all web)
+footer and menu
+
+
+@media screen and (max-width: 1024px) {
+    .menu { /* show mobile menu
+        display: block;
+    }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #9500b3;
+        height: auto;
+        padding: 10px;
+
+    }
+
+    footer div:nth-child(1) {
+        width: 50%;
+    }
+
+    footer div:nth-child(2) {
+        width: 25%;
+        order: 3;
+    }
+
+    footer div:nth-child(3) {
+        width: 25%;
+        order: 2;
+    }
+
+    footer div:nth-child(4) {
+
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    /* main, aside, footer
+
+    footer {
+        display: block;
+        padding: 20px;
+    }
+
+    footer div:nth-child(1) {
+        width: 100%;
+    }
+
+    footer div:nth-child(3) {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer div:nth-child(3) {
+        justify-content: center;
+    }
+
+    footer div:nth-child(4){
+        justify-content: center;
+    }
+} */

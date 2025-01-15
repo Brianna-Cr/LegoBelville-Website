@@ -1,0 +1,176 @@
+
+
+/* Contact Page CSS */
+
+body{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "title title title title"
+        "main main main main"
+        "footer footer footer footer";
+}
+
+.Support-Contact{
+    grid-area: title;
+    display: grid;
+    background-color: rgba(205, 164, 196, 0.69);
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    height: 60vh;
+    width: auto;
+}
+.Support-Contact > h1{
+    font-size: 45px;
+    text-shadow: 2px 2px white;
+}
+.Support-Contact > p{
+    font-size: 15px;
+}
+
+main{
+    grid-area: main;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.form{
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.form h3{
+    font-size: 25px;
+    text-align: center;
+}
+input[type=text],
+input[type=number]{
+    width: 100%;
+    padding: 10px 22px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #cccccc;
+}
+textarea{
+    width: 500px;
+    height: 250px;
+    padding: 10px 22px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none; /* no resize */
+}
+input[type=text]:focus, input[type=number]:focus, textarea:focus{
+    border: 3px solid #555;
+}
+
+input[type=submit]{
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+/* alert */
+#popup-trigger {
+    display: none;
+}
+
+/* Pop-up Modal Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin: 0;
+}
+
+/* Show the modal when checkbox is checked */
+#popup-trigger:checked + .popup {
+    display: flex;
+}
+
+
+
+/* Mobile Styling - Adjusted per page */
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        display: grid;
+        grid-template-areas:
+        "header header header header"
+        "title title title title"
+        "main main main main"
+        "footer footer footer footer";
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: auto;
+        width: 100%;
+    }
+    main > section{
+        padding: 0px;
+    }
+    main > section p{
+        width: auto;
+    }
+
+}
+@media screen and (max-width: 980px){ /* mast head */
+    .Support-Contact h1{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 700px) {
+    /* main */
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+}
+@media screen and (max-width: 425px) {
+    /* main, aside*/
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    main section {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+
+}

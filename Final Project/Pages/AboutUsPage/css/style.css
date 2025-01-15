@@ -1,0 +1,123 @@
+
+
+/* About Us Page CSS */
+
+
+body{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"   /* header styling will be the same for all webpages */
+        "main main main main"
+        "aside aside aside aside"
+        "footer footer footer footer"; /* footer styling will be the same for all webpages */
+}
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0px;
+}
+main h2{
+    font-size: 30px;
+}
+main p{
+    font-size: 18px;
+    width: 900px;
+}
+main p a{
+    text-decoration-line: underline;
+    color: blue;
+    font-size: 18px;
+    width: 900px;
+}
+main p a:hover{
+    background-color: rgb(255,255,255,0.5);
+    color: darkblue;
+}
+
+aside{
+    grid-area: aside;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+footer{
+    grid-area: footer;
+}
+
+/* Mobile Styling - Adjusted per page */
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        display: grid;
+        grid-template-areas:
+        "header header header header"
+        "title title title title"
+        "main main main main"
+        "aside aside aside aside"
+        "footer footer footer footer";
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: auto;
+        width: 100%;
+    }
+    main > section{
+        padding: 0px;
+    }
+    main > section p{
+        width: auto;
+    }
+    aside {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    aside article{
+        padding: 25px 15px;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    /* main */
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+}
+@media screen and (max-width: 425px){ /* main, aside*/
+    main{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    main section{
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    aside {
+        grid-template-columns: 100%;
+    }
+    aside article img{
+        align-content: center;
+        justify-content: center;
+        width: 50%;
+    }
+
+}

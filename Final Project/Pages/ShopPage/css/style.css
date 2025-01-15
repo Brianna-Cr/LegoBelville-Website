@@ -1,0 +1,182 @@
+
+
+/* Shop Page CSS */
+
+body{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "title title title title"
+        "main main main aside"
+        "footer footer footer footer";
+}
+
+header{
+    grid-area: header;
+}
+
+.ProductTitle{
+    grid-area: title;
+    display: grid;
+    height: 45vh;
+    width: auto;
+    background-color: rgba(179, 132, 177, 0.67);
+}
+.ProductTitle > h1{
+    text-shadow: 2px 2px #ffe8ff;
+    display: grid;
+    margin: 0px;
+    font-size: 7vh;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+main{
+    grid-area: main;
+    height: 150vh;
+    width: auto;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    align-content: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+main > section img{
+    height: 300px;
+    width: auto;
+
+}
+main > section img:hover{
+    border: 5px solid #e6e6e6;
+}
+main > section + section img{
+    display: grid;
+    height: 300px;
+    width: auto;
+
+}
+main > section + section img:hover {
+    border: 5px solid #e6e6e6;
+}
+main > section + section + section img{
+    display: grid;
+    height: 300px;
+    width: auto;
+    padding-left: 50px;
+}
+main > section + section + section img:hover{
+    border: 5px solid #e6e6e6;
+}
+
+aside{
+    grid-area: aside;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    height: 100%;
+    width: auto;
+    background-color: #ccc1b5;
+    border: 3px 3px #a69582;
+    text-align: center;
+    padding-top: 20px;
+}
+aside section h5{
+   font-size: 25px;
+}
+aside section p{
+    font-size: 15px;
+}
+aside section + section{
+    display: grid;
+}
+input[type=text]{
+    height: auto;
+}
+input[type=submit]{
+    height: auto;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+/* Mobile Styling - Adjusted per page */
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        display: grid;
+        grid-template-areas:
+        "header header header header"
+        "title title title title"
+        "main main main main"
+        "aside aside aside aside"
+        "footer footer footer footer";
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: auto;
+        width: 100%;
+    }
+    main > section{
+        padding: 0px;
+    }
+    main > section + section{
+        padding: 0px;
+    }
+    aside {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    aside div {
+        padding: 25px 15px;
+    }
+
+}
+
+@media screen and (max-width: 980px){ /* mast head */
+    .ProductTitle h1{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    /* main */
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+}
+    @media screen and (max-width: 425px){ /* main, aside*/
+    main{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    main section{
+        height: auto;
+        margin-bottom: 20px;
+    }
+    main section + section img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    main section + section + section img{
+        order: 3;
+        margin-bottom: 20px;
+    }
+        aside {
+            grid-template-columns: 100%;
+        }
+
+}

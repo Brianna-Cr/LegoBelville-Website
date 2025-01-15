@@ -1,0 +1,80 @@
+/* Thank You Form */
+
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "main main main main"
+        "footer footer footer footer";
+}
+
+
+main{
+    grid-area: main;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    height: 100vh;
+}
+main section h2{
+    font-size: 55px;
+    text-align: center;
+}
+
+
+/* Mobile Styling - Adjusted per page */
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        display: grid;
+        grid-template-areas:
+        "header header header header"
+        "main main main main"
+        "footer footer footer footer";
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: auto;
+        width: 100%;
+    }
+    main > section{
+        padding: 0px;
+    }
+    main > section p{
+        width: auto;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    /* main */
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+}
+@media screen and (max-width: 425px) {
+    /* main, aside*/
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    main section {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+
+}
